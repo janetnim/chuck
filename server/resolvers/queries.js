@@ -1,18 +1,14 @@
-export default {
-  categories: (parent, args, { db }, info) => {
-    return db.Categories.findAll();
-  },
+const fetch = require("node-fetch");
 
-  locations: (parent, args, { db }, info) => {
-    const where = args.categoryId ? { id: args.categoryId } : {};
-    return db.Locations.findAll({
-      include: [
-        {
-          model: db.Categories,
-          attributes: ["name"],
-          where
-        }
-      ]
-    });
+export default {
+  categories: async() => {
+    const response = await fetch('https://api.chucknorris.io/jokes/categories');
+    const data = await response.json();
+    return data;
+  },
+  random: async(parent, args, {}, info) => {
+    const response = await fetch(`https://api.chucknorris.io/jokes/random?category=${args.category}`);
+    const data = await response.json();
+    return data;
   }
 };

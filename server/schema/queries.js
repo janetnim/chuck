@@ -1,7 +1,16 @@
 import types from "./types";
+
 export default `
   type Query {
-    categories: [Category!],
-    locations(categoryId: Int): [Category!]
+    categories: [Categories!]!,
+    random(category: String): Random
+  }
+
+  type Categories {
+    name: String!
+  }
+
+  type Random {
+    value: String!
   }
 `;
