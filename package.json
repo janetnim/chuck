@@ -4,8 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "babel ./src -d ./dist",
-    "heroku-postbuild": "cd react-ui/ && yarn install && yarn install --only=dev --no-shrinkwrap && yarn run build",
+    "build": "node dist",
     "start": "node dist"
   },
   "dependencies": {
