@@ -1,10 +1,10 @@
 {
-  "name": "GraphQL-Apollo-Node-Express-Postgres-Sequelize-starter",
+  "name": "chuck-backend",
   "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "node dist"
+    "start": "node dist/index"
   },
   "dependencies": {
     "apollo-server-express": "^2.1.0",
